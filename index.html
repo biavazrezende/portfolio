@@ -424,7 +424,7 @@ em{font-style:normal;}
 .bignumber .value em{color:var(--red);font-style:normal;}
 .bignumber .caption{margin-top:1rem;color:var(--muted);max-width:44rem;}
 
-.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.7rem,1.6vw,1.1rem);margin-top:1.1rem;}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.7rem,1.6vw,1.1rem);margin-top:1.1rem;}
 .metric{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:1.15rem;box-shadow:var(--sh-sm);}
 .metric .k{font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);}
 .metric .v{font-family:Poppins,Inter,sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:-.035em;margin-top:.3rem;}
@@ -519,6 +519,8 @@ em{font-style:normal;}
 .anexo>summary:hover{color:var(--red);}
 .anexo-body{padding:0 1.2rem 1.3rem;font-size:.9rem;color:var(--muted);}
 .anexo-body p{margin-top:.85rem;line-height:1.6;}
+.anexo-h{font-family:Poppins,Inter,sans-serif;font-weight:600;font-size:.9rem;color:var(--text);margin-top:1.4rem;letter-spacing:-.01em;}
+.anexo-body>.anexo-h:first-child{margin-top:.2rem;}
 .anexo-body b{color:var(--text);font-weight:600;}
 .anexo-tw{overflow-x:auto;margin-top:1.1rem;}
 .anexo table{border-collapse:collapse;width:100%;min-width:30rem;font-size:.85rem;}
@@ -836,7 +838,7 @@ em{font-style:normal;}
         <div class="metric hero-metric">
           <p class="k" data-i18n="c1.m1k">WhatsApp ROAS</p>
           <p class="v num" data-i18n="c1.m1v">62.1x</p>
-          <p class="s" data-i18n="c1.m1s">attributed, on the channel's messaging cost &mdash; estimated incremental is ~8x (see the note)</p>
+          <p class="s" data-i18n="c1.m1s">on the channel's messaging cost, last touch attribution</p>
         </div>
         <div class="metric">
           <p class="k" data-i18n="c1.m3k">Email and push</p>
@@ -847,6 +849,11 @@ em{font-style:normal;}
           <p class="k" data-i18n="c1.m4k">Funnel generated</p>
           <p class="v num" data-i18n="c1.m4v">65,957 / 34,196</p>
           <p class="s" data-i18n="c1.m4s">bookings and completed visits attributed to the campaign</p>
+        </div>
+        <div class="metric">
+          <p class="k" data-i18n="c1.m5k">Reactivation</p>
+          <p class="v num" data-i18n="c1.m5v">R$ 8.4 million</p>
+          <p class="s" data-i18n="c1.m5s">31% of the revenue came from patients with no visit in 6 months or more, or who had never been</p>
         </div>
       </div>
 
@@ -905,10 +912,26 @@ em{font-style:normal;}
         </div>
       </div>
 
-      <aside class="sidenote sidenote--flag rise" data-i18n="c1.honest"><b>How to read this number.</b> R$ 27.4 million is <em>attributed</em> revenue, not incremental. I ran the incrementality test against the patients who received the message and never opened it, and it fails its own placebo &mdash; readers were already spending 29% more <em>before</em> the campaign. Corrected for the measured bias, the incremental figure lands near R$ 3.2 million and ROAS near 8x, not 62x. Eight times smaller, and still a good return. That is why the next campaign ships with a holdout: 5% of the base held back before the send settles what no observational cut can.</aside>
+      <aside class="sidenote sidenote--flag rise" data-i18n="c1.honest"><b>How to read this number.</b> It is <em>attributed</em> revenue: whoever received it converted inside the window. What it does show is reach — <b>31% came from patients with no visit in six months or more, and 8% from people who had never set foot in a clinic</b>. This is not the active base repeating itself, which is the standing risk of any CRM campaign. What it does not show is causality: with no holdout, some of that revenue would have happened anyway. I ran the incrementality test regardless — it is open in the appendix below, result and limitations — and the next campaign ships with 5% of the base held back before the send.</aside>
       <details class="anexo rise">
-        <summary data-i18n="anx.sum">The incrementality study, in full</summary>
+        <summary data-i18n="anx.sum">Who converted, and what this number proves</summary>
         <div class="anexo-body">
+          <p class="anexo-h" data-i18n="anx.h1">What the revenue is made of</p>
+          <p data-i18n="anx.rea">For each patient I measured how long they had gone without being seen at any clinic in the network before the message went out. Conversion falls as absence grows, as expected — but almost a third of the revenue comes from people who had already drifted away, and an eighth from people who had never come at all.</p>
+          <div class="anexo-tw">
+            <table>
+              <thead><tr><th data-i18n="anx.ct1">Time since last visit</th><th data-i18n="anx.ct2">Patients</th><th data-i18n="anx.ct3">Conversion</th><th data-i18n="anx.ct4">Revenue</th></tr></thead>
+              <tbody>
+                <tr><td data-i18n="anx.f1.n">under 3 months</td><td data-i18n="anx.f1.p">153,510</td><td data-i18n="anx.f1.c">24.8%</td><td data-i18n="anx.f1.r">R$ 14.7M <small>54%</small></td></tr>
+                <tr><td data-i18n="anx.f2.n">3 to 6 months</td><td data-i18n="anx.f2.p">65,230</td><td data-i18n="anx.f2.c">13.5%</td><td data-i18n="anx.f2.r">R$ 3.9M <small>14%</small></td></tr>
+                <tr><td data-i18n="anx.f3.n">6 to 12 months</td><td data-i18n="anx.f3.p">103,968</td><td data-i18n="anx.f3.c">9.4%</td><td data-i18n="anx.f3.r">R$ 4.6M <small>17%</small></td></tr>
+                <tr><td data-i18n="anx.f4.n">12 to 24 months</td><td data-i18n="anx.f4.p">49,345</td><td data-i18n="anx.f4.c">6.2%</td><td data-i18n="anx.f4.r">R$ 1.4M <small>5%</small></td></tr>
+                <tr><td data-i18n="anx.f5.n">over 24 months</td><td data-i18n="anx.f5.p">5,304</td><td data-i18n="anx.f5.c">6.8%</td><td data-i18n="anx.f5.r">R$ 0.2M <small>1%</small></td></tr>
+                <tr><td data-i18n="anx.f6.n">had never come</td><td data-i18n="anx.f6.p">42,428</td><td data-i18n="anx.f6.c">12.3%</td><td data-i18n="anx.f6.r">R$ 2.2M <small>8%</small></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="anexo-h" data-i18n="anx.h2">The incrementality test</p>
           <p data-i18n="anx.p1"><b>What the data allows.</b> The email and push campaign tables record only the people who engaged &mdash; there is no row for someone who received and ignored, so no comparison group exists on those two channels. On WhatsApp one does: the table stores sends, and read status comes from a separate source. Since WhatsApp accounts for R$ 25.8 of the R$ 27.4 million, the study is about WhatsApp.</p>
           <p data-i18n="anx.p2"><b>The design.</b> Treated: 418,473 patients who read the message. Control: 127,518 who received it on their phone and never opened it. I excluded 116,315 delivery failures, because a wrong or blocked number is a systematically different person. Revenue measured in symmetric 45-day windows before and after each patient's send date. Covariates were built with a cutoff at that send date: the company's ready-made feature store is recomputed up to the present and would carry post-campaign behavior.</p>
           <p data-i18n="anx.p2b"><b>The baseline.</b> Before any message went out, the people who would go on to read were already spending <b>R$ 79.39</b> per patient against <b>R$ 61.69</b> for those who would not. The selection bias is not a hypothesis, it is a measurement.</p>
@@ -1090,9 +1113,43 @@ var I18N = {
     "c1.sub":"Modelo de atribuição próprio, construído para dar resposta justa quando várias campanhas rodam ao mesmo tempo, nos mesmos canais, para a mesma base.",
     "c1.big":"R$ <em>27,4</em> milhões",
     "c1.bigcap":"Receita atribuída à campanha, deduplicada por CPF em first touch. Disparos de 24/06 a 30/07/2026, receita medida em até 45 dias por contato.",
-    "c1.m1k":"ROAS WhatsApp","c1.m1v":"62,1x","c1.m1s":"atribuído, sobre o custo de disparo do canal &mdash; o incremental estimado é ~8x (veja a nota)",
+    "c1.m1k":"ROAS WhatsApp","c1.m1v":"62,1x","c1.m1s":"sobre o custo de disparo do canal, em atribuição last touch",
     "c1.m3k":"E-mail e push","c1.m3v":"R$ 1,6 milhão","c1.m3s":"de receita adicional, sem custo de mídia para o time",
     "c1.m4k":"Funil gerado","c1.m4v":"65.957 / 34.196","c1.m4s":"agendamentos e atendimentos atribuídos à campanha",
+    "c1.m5k":"Reativação",
+    "c1.m5v":"R$ 8,4 milhões",
+    "c1.m5s":"31% da receita veio de quem não pisava numa clínica havia 6 meses ou mais, ou nunca tinha ido",
+    "anx.h1":"A composição da receita",
+    "anx.h2":"O teste de incrementalidade",
+    "anx.rea":"Para cada paciente, medi há quanto tempo ele não era atendido em nenhuma clínica da rede antes de a mensagem sair. A taxa de conversão cai com o tempo de ausência, como era de esperar — mas quase um terço da receita vem de quem já tinha sumido, e um oitavo de quem nunca tinha vindo.",
+    "anx.ct1":"Tempo sem pisar numa clínica",
+    "anx.ct2":"Pacientes",
+    "anx.ct3":"Conversão",
+    "anx.ct4":"Receita",
+    "anx.f1.n":"até 3 meses",
+    "anx.f1.p":"153.510",
+    "anx.f1.c":"24,8%",
+    "anx.f1.r":"R$ 14,7 mi <small>54%</small>",
+    "anx.f2.n":"3 a 6 meses",
+    "anx.f2.p":"65.230",
+    "anx.f2.c":"13,5%",
+    "anx.f2.r":"R$ 3,9 mi <small>14%</small>",
+    "anx.f3.n":"6 a 12 meses",
+    "anx.f3.p":"103.968",
+    "anx.f3.c":"9,4%",
+    "anx.f3.r":"R$ 4,6 mi <small>17%</small>",
+    "anx.f4.n":"12 a 24 meses",
+    "anx.f4.p":"49.345",
+    "anx.f4.c":"6,2%",
+    "anx.f4.r":"R$ 1,4 mi <small>5%</small>",
+    "anx.f5.n":"mais de 24 meses",
+    "anx.f5.p":"5.304",
+    "anx.f5.c":"6,8%",
+    "anx.f5.r":"R$ 0,2 mi <small>1%</small>",
+    "anx.f6.n":"nunca tinham vindo",
+    "anx.f6.p":"42.428",
+    "anx.f6.c":"12,3%",
+    "anx.f6.r":"R$ 2,2 mi <small>8%</small>",
     "c1.scalelbl":"WhatsApp, barra em escala real",
     "c1.scalealt":"Barra em escala: R$ 415 mil de investimento representam 1,6% dos R$ 25,8 milhões de retorno.",
     "c1.leg1":"Investimento: R$ 415 mil","c1.leg2":"Retorno: R$ 25,8 milhões",
@@ -1102,8 +1159,8 @@ var I18N = {
     "c1.p4t":"Base transacional","c1.p4d":"Agendamento, atendimento e proposta paga no data lake",
     "c1.p5t":"Receita atribuída","c1.p5d":"Resultado por canal, sem dupla contagem entre campanhas",
     "c1.method":"A chave é o <code>CPF normalizado</code>: ele liga quem recebeu a mensagem a quem de fato agendou, foi atendido e pagou. A deduplicação <b>first touch por template</b> impede que o mesmo paciente conte duas vezes quando é impactado por mais de um canal — é o que mantém a atribuição justa entre campanhas simultâneas.",
-    "c1.honest":"<b>Como ler esse número.</b> R$ 27,4 milhões é receita <em>atribuída</em>, não incremental. Rodei o teste de incrementalidade contra quem recebeu a mensagem e nunca abriu, e ele falha no próprio placebo &mdash; quem lê já gastava 29% a mais <em>antes</em> da campanha. Corrigido pelo viés medido, o incremental fica em torno de R$ 3,2 milhões e o ROAS em ~8x, não 62x. Oito vezes menor, e ainda assim um bom retorno. É por isso que a próxima campanha sai com holdout: 5% da base separada antes do disparo responde de vez o que nenhum recorte observacional resolve.",
-    "anx.sum":"O estudo de incrementalidade, na íntegra",
+    "c1.honest":"<b>Como ler esse número.</b> É receita <em>atribuída</em>: quem recebeu, converteu dentro da janela. O que ela mostra é alcance — <b>31% vieram de pacientes sem visita há 6 meses ou mais, e 8% de gente que nunca tinha pisado numa clínica</b>. Não é a base ativa se repetindo, que é o risco de toda campanha de CRM. O que ela não mostra é causalidade: sem holdout, parte dessa receita aconteceria de qualquer jeito. Rodei o teste de incrementalidade mesmo assim — está aberto no anexo abaixo, resultado e limitações — e a próxima campanha sai com 5% da base separada antes do disparo.",
+    "anx.sum":"Quem converteu, e o que esse número prova",
     "anx.p1":"<b>O limite do dado.</b> As tabelas de campanha de e-mail e de push registram apenas quem engajou &mdash; não existe linha para quem recebeu e ignorou, então não há grupo de comparação possível nesses dois canais. No WhatsApp existe: a tabela guarda envios e o status de leitura vem de outra fonte. Como o WhatsApp responde por R$ 25,8 dos R$ 27,4 milhões, o estudo é dele.",
     "anx.p2":"<b>O desenho.</b> Tratado: 418.473 pacientes que leram a mensagem. Controle: 127.518 que receberam no aparelho e nunca abriram. Excluí 116.315 com falha de entrega, porque número errado ou bloqueado é gente sistematicamente diferente. Receita medida em janelas simétricas de 45 dias antes e depois do envio de cada paciente. As covariáveis foram construídas com corte na data de envio: a feature store pronta da empresa é recalculada até a data corrente e conteria comportamento pós-campanha.",
     "anx.p2b":"<b>A linha de base.</b> Antes de qualquer mensagem sair, quem viria a ler já gastava <b>R$ 79,39</b> por paciente contra <b>R$ 61,69</b> de quem não leria. O viés de seleção não é hipótese, é medida.",
@@ -1207,9 +1264,43 @@ var I18N = {
     "c1.sub":"A custom attribution model, built to give a fair answer when several campaigns run at the same time, on the same channels, to the same base.",
     "c1.big":"R$ <em>27.4</em> million",
     "c1.bigcap":"Revenue attributed to the campaign, deduplicated by CPF at first touch. Sent 24 Jun to 30 Jul 2026, revenue measured within 45 days of each contact.",
-    "c1.m1k":"WhatsApp ROAS","c1.m1v":"62.1x","c1.m1s":"attributed, on the channel's messaging cost &mdash; estimated incremental is ~8x (see the note)",
+    "c1.m1k":"WhatsApp ROAS","c1.m1v":"62.1x","c1.m1s":"on the channel's messaging cost, last touch attribution",
     "c1.m3k":"Email and push","c1.m3v":"R$ 1.6 million","c1.m3s":"in additional revenue, at no media cost to the team",
     "c1.m4k":"Funnel generated","c1.m4v":"65,957 / 34,196","c1.m4s":"bookings and completed visits attributed to the campaign",
+    "c1.m5k":"Reactivation",
+    "c1.m5v":"R$ 8.4 million",
+    "c1.m5s":"31% of the revenue came from patients with no visit in 6 months or more, or who had never been",
+    "anx.h1":"What the revenue is made of",
+    "anx.h2":"The incrementality test",
+    "anx.rea":"For each patient I measured how long they had gone without being seen at any clinic in the network before the message went out. Conversion falls as absence grows, as expected — but almost a third of the revenue comes from people who had already drifted away, and an eighth from people who had never come at all.",
+    "anx.ct1":"Time since last visit",
+    "anx.ct2":"Patients",
+    "anx.ct3":"Conversion",
+    "anx.ct4":"Revenue",
+    "anx.f1.n":"under 3 months",
+    "anx.f1.p":"153,510",
+    "anx.f1.c":"24.8%",
+    "anx.f1.r":"R$ 14.7M <small>54%</small>",
+    "anx.f2.n":"3 to 6 months",
+    "anx.f2.p":"65,230",
+    "anx.f2.c":"13.5%",
+    "anx.f2.r":"R$ 3.9M <small>14%</small>",
+    "anx.f3.n":"6 to 12 months",
+    "anx.f3.p":"103,968",
+    "anx.f3.c":"9.4%",
+    "anx.f3.r":"R$ 4.6M <small>17%</small>",
+    "anx.f4.n":"12 to 24 months",
+    "anx.f4.p":"49,345",
+    "anx.f4.c":"6.2%",
+    "anx.f4.r":"R$ 1.4M <small>5%</small>",
+    "anx.f5.n":"over 24 months",
+    "anx.f5.p":"5,304",
+    "anx.f5.c":"6.8%",
+    "anx.f5.r":"R$ 0.2M <small>1%</small>",
+    "anx.f6.n":"had never come",
+    "anx.f6.p":"42,428",
+    "anx.f6.c":"12.3%",
+    "anx.f6.r":"R$ 2.2M <small>8%</small>",
     "c1.scalelbl":"WhatsApp, bar drawn to true scale",
     "c1.scalealt":"Bar to scale: R$ 415K of spend is 1.6% of the R$ 25.8 million return.",
     "c1.leg1":"Spend: R$ 415K","c1.leg2":"Return: R$ 25.8 million",
@@ -1219,8 +1310,8 @@ var I18N = {
     "c1.p4t":"Transactional base","c1.p4d":"Bookings, completed visits and paid treatment plans in the data lake",
     "c1.p5t":"Attributed revenue","c1.p5d":"Result per channel, with no double counting across campaigns",
     "c1.method":"The key is the <code>normalized CPF</code>: it links whoever received the message to whoever actually booked, showed up and paid. <b>First touch deduplication per template</b> stops the same patient being counted twice when reached by more than one channel &mdash; which is what keeps attribution fair across simultaneous campaigns.",
-    "c1.honest":"<b>How to read this number.</b> R$ 27.4 million is <em>attributed</em> revenue, not incremental. I ran the incrementality test against the patients who received the message and never opened it, and it fails its own placebo &mdash; readers were already spending 29% more <em>before</em> the campaign. Corrected for the measured bias, the incremental figure lands near R$ 3.2 million and ROAS near 8x, not 62x. Eight times smaller, and still a good return. That is why the next campaign ships with a holdout: 5% of the base held back before the send settles what no observational cut can.",
-    "anx.sum":"The incrementality study, in full",
+    "c1.honest":"<b>How to read this number.</b> It is <em>attributed</em> revenue: whoever received it converted inside the window. What it does show is reach — <b>31% came from patients with no visit in six months or more, and 8% from people who had never set foot in a clinic</b>. This is not the active base repeating itself, which is the standing risk of any CRM campaign. What it does not show is causality: with no holdout, some of that revenue would have happened anyway. I ran the incrementality test regardless — it is open in the appendix below, result and limitations — and the next campaign ships with 5% of the base held back before the send.",
+    "anx.sum":"Who converted, and what this number proves",
     "anx.p1":"<b>What the data allows.</b> The email and push campaign tables record only the people who engaged &mdash; there is no row for someone who received and ignored, so no comparison group exists on those two channels. On WhatsApp one does: the table stores sends, and read status comes from a separate source. Since WhatsApp accounts for R$ 25.8 of the R$ 27.4 million, the study is about WhatsApp.",
     "anx.p2":"<b>The design.</b> Treated: 418,473 patients who read the message. Control: 127,518 who received it on their phone and never opened it. I excluded 116,315 delivery failures, because a wrong or blocked number is a systematically different person. Revenue measured in symmetric 45-day windows before and after each patient's send date. Covariates were built with a cutoff at that send date: the company's ready-made feature store is recomputed up to the present and would carry post-campaign behavior.",
     "anx.p2b":"<b>The baseline.</b> Before any message went out, the people who would go on to read were already spending <b>R$ 79.39</b> per patient against <b>R$ 61.69</b> for those who would not. The selection bias is not a hypothesis, it is a measurement.",
