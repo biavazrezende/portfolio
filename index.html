@@ -819,7 +819,7 @@ em{font-style:normal;}
         <div class="metric hero-metric">
           <p class="k" data-i18n="c1.m1k">WhatsApp ROAS</p>
           <p class="v num" data-i18n="c1.m1v">62.1x</p>
-          <p class="s" data-i18n="c1.m1s">on the channel's messaging cost — last touch attribution, no control group</p>
+          <p class="s" data-i18n="c1.m1s">attributed, on the channel's messaging cost &mdash; estimated incremental is ~8x (see the note)</p>
         </div>
         <div class="metric">
           <p class="k" data-i18n="c1.m3k">Email and push</p>
@@ -888,7 +888,7 @@ em{font-style:normal;}
         </div>
       </div>
 
-      <aside class="sidenote sidenote--flag rise" data-i18n="c1.honest"><b>How to read this number.</b> R$ 27.4 million is <em>attributed</em> revenue, not incremental. The model links who received to who paid, but the entire base was reached &mdash; there was no control group, so part of that revenue would have happened without the campaign. The R$ 415K is messaging cost only: it excludes creative, team and the offer itself. That is exactly the next step: a holdout designed in from the start, to separate what the campaign caused from what it merely accompanied.</aside>
+      <aside class="sidenote sidenote--flag rise" data-i18n="c1.honest"><b>How to read this number.</b> R$ 27.4 million is <em>attributed</em> revenue, not incremental. I ran the incrementality test against the patients who received the message and never opened it, and it fails its own placebo &mdash; readers were already spending 29% more <em>before</em> the campaign. Corrected for the measured bias, the incremental figure lands near R$ 3.2 million and ROAS near 8x, not 62x. Eight times smaller, and still a good return. That is why the next campaign ships with a holdout: 5% of the base held back before the send settles what no observational cut can.</aside>
     </div>
   </section>
 
@@ -1040,7 +1040,7 @@ var I18N = {
     "c1.sub":"Modelo de atribuição próprio, construído para dar resposta justa quando várias campanhas rodam ao mesmo tempo, nos mesmos canais, para a mesma base.",
     "c1.big":"R$ <em>27,4</em> milhões",
     "c1.bigcap":"Receita atribuída à campanha, com deduplicação first touch por CPF e sem sobreposição entre canais.",
-    "c1.m1k":"ROAS WhatsApp","c1.m1v":"62,1x","c1.m1s":"sobre o custo de disparo do canal — atribuição last touch, sem grupo de controle",
+    "c1.m1k":"ROAS WhatsApp","c1.m1v":"62,1x","c1.m1s":"atribuído, sobre o custo de disparo do canal &mdash; o incremental estimado é ~8x (veja a nota)",
     "c1.m3k":"E-mail e push","c1.m3v":"R$ 1,6 milhão","c1.m3s":"de receita adicional, sem custo de mídia para o time",
     "c1.m4k":"Funil gerado","c1.m4v":"65.957 / 34.196","c1.m4s":"agendamentos e atendimentos atribuídos à campanha",
     "c1.scalelbl":"WhatsApp, barra em escala real",
@@ -1052,7 +1052,7 @@ var I18N = {
     "c1.p4t":"Base transacional","c1.p4d":"Agendamento, atendimento e proposta paga no data lake",
     "c1.p5t":"Receita atribuída","c1.p5d":"Resultado por canal, sem dupla contagem entre campanhas",
     "c1.method":"A chave é o <code>CPF normalizado</code>: ele liga quem recebeu a mensagem a quem de fato agendou, foi atendido e pagou. A deduplicação <b>first touch por template</b> impede que o mesmo paciente conte duas vezes quando é impactado por mais de um canal — é o que mantém a atribuição justa entre campanhas simultâneas.",
-    "c1.honest":"<b>Como ler esse número.</b> R$ 27,4 milhões é receita <em>atribuída</em>, não incremental. O modelo liga quem recebeu a quem pagou, mas a base inteira foi impactada — não houve grupo de controle, então parte dessa receita aconteceria sem a campanha. Os R$ 415 mil também são só custo de disparo: não incluem criativo, time nem a oferta. O próximo passo é exatamente esse: um holdout desenhado desde o início, para separar o que a campanha causou do que ela apenas acompanhou.",
+    "c1.honest":"<b>Como ler esse número.</b> R$ 27,4 milhões é receita <em>atribuída</em>, não incremental. Rodei o teste de incrementalidade contra quem recebeu a mensagem e nunca abriu, e ele falha no próprio placebo &mdash; quem lê já gastava 29% a mais <em>antes</em> da campanha. Corrigido pelo viés medido, o incremental fica em torno de R$ 3,2 milhões e o ROAS em ~8x, não 62x. Oito vezes menor, e ainda assim um bom retorno. É por isso que a próxima campanha sai com holdout: 5% da base separada antes do disparo responde de vez o que nenhum recorte observacional resolve.",
     "c3.sub":"A entrega no meio do caminho: o redirect que encontra a clínica do paciente",
 
     "c2.eyebrow":"Automação de processo",
@@ -1130,7 +1130,7 @@ var I18N = {
     "c1.sub":"A custom attribution model, built to give a fair answer when several campaigns run at the same time, on the same channels, to the same base.",
     "c1.big":"R$ <em>27.4</em> million",
     "c1.bigcap":"Revenue attributed to the campaign, with first touch deduplication by CPF and no overlap between channels.",
-    "c1.m1k":"WhatsApp ROAS","c1.m1v":"62.1x","c1.m1s":"on the channel's messaging cost — last touch attribution, no control group",
+    "c1.m1k":"WhatsApp ROAS","c1.m1v":"62.1x","c1.m1s":"attributed, on the channel's messaging cost &mdash; estimated incremental is ~8x (see the note)",
     "c1.m3k":"Email and push","c1.m3v":"R$ 1.6 million","c1.m3s":"in additional revenue, at no media cost to the team",
     "c1.m4k":"Funnel generated","c1.m4v":"65,957 / 34,196","c1.m4s":"bookings and completed visits attributed to the campaign",
     "c1.scalelbl":"WhatsApp, bar drawn to true scale",
@@ -1142,7 +1142,7 @@ var I18N = {
     "c1.p4t":"Transactional base","c1.p4d":"Bookings, completed visits and paid treatment plans in the data lake",
     "c1.p5t":"Attributed revenue","c1.p5d":"Result per channel, with no double counting across campaigns",
     "c1.method":"The key is the <code>normalized CPF</code>: it links whoever received the message to whoever actually booked, showed up and paid. <b>First touch deduplication per template</b> stops the same patient being counted twice when reached by more than one channel &mdash; which is what keeps attribution fair across simultaneous campaigns.",
-    "c1.honest":"<b>How to read this number.</b> R$ 27.4 million is <em>attributed</em> revenue, not incremental. The model links who received to who paid, but the entire base was reached &mdash; there was no control group, so part of that revenue would have happened without the campaign. The R$ 415K is messaging cost only: it excludes creative, team and the offer itself. That is exactly the next step: a holdout designed in from the start, to separate what the campaign caused from what it merely accompanied.",
+    "c1.honest":"<b>How to read this number.</b> R$ 27.4 million is <em>attributed</em> revenue, not incremental. I ran the incrementality test against the patients who received the message and never opened it, and it fails its own placebo &mdash; readers were already spending 29% more <em>before</em> the campaign. Corrected for the measured bias, the incremental figure lands near R$ 3.2 million and ROAS near 8x, not 62x. Eight times smaller, and still a good return. That is why the next campaign ships with a holdout: 5% of the base held back before the send settles what no observational cut can.",
     "c3.sub":"The delivery in the middle: the redirect that finds the patient's own clinic",
 
     "c2.eyebrow":"Process automation",
